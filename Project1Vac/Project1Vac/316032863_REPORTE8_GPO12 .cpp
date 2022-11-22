@@ -121,7 +121,7 @@ int main()
 	glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);*/
 
 	// Create a GLFWwindow object that we can use for GLFW's functions
-	GLFWwindow* window = glfwCreateWindow(WIDTH, HEIGHT, "Iluminacion 2", nullptr, nullptr);
+	GLFWwindow* window = glfwCreateWindow(WIDTH, HEIGHT, "Proyecto", nullptr, nullptr);
 
 	if (nullptr == window)
 	{
@@ -165,7 +165,13 @@ int main()
 	Model Piso((char*)"Models/Jaula/Sea.obj");
 	Model Jaula((char*)"Models/Jaula/Base.obj");
 	Model Penguin((char*)"Models/Penguin/Penguin.obj");
-
+	Model Fachada((char*)"Models/Fachada/Fachada.obj");
+	Model Mesa((char*)"Models/Mesa/Mesa.obj");
+	Model Tabla((char*)"Models/Mesa/Tabla.obj");
+	Model Pecera((char*)"Models/Pecera/PeceraP.obj");
+	Model Sel((char*)"Models/Pecera/Sel.obj");
+	Model Pez_Dorado((char*)"Models/Pez_Dorado/Pez_Dorado.obj");
+	Model Silla((char*)"Models/Silla/SC.obj");
 
 
 
@@ -223,8 +229,8 @@ int main()
 
 		// Directional light
 		glUniform3f(glGetUniformLocation(lightingShader.Program, "dirLight.direction"), -0.2f, -1.0f, -0.3f);
-		glUniform3f(glGetUniformLocation(lightingShader.Program, "dirLight.ambient"),0.1f,0.1f,0.1f);
-		glUniform3f(glGetUniformLocation(lightingShader.Program, "dirLight.diffuse"), 0.1f, 0.1f, 0.1f);
+		glUniform3f(glGetUniformLocation(lightingShader.Program, "dirLight.ambient"),0.3f,0.3f,0.3f);
+		glUniform3f(glGetUniformLocation(lightingShader.Program, "dirLight.diffuse"), 0.3f, 0.3f, 0.3f);
 		glUniform3f(glGetUniformLocation(lightingShader.Program, "dirLight.specular"),0.7f, 0.7f, 0.7f);
 
 
@@ -273,7 +279,7 @@ int main()
 		glUniform1f(glGetUniformLocation(lightingShader.Program, "pointLights[3].quadratic"), 0.0f);
 
 		// SpotLight
-		glUniform3f(glGetUniformLocation(lightingShader.Program, "spotLight.position"), camera.GetPosition().x, camera.GetPosition().y, camera.GetPosition().z);
+		/*glUniform3f(glGetUniformLocation(lightingShader.Program, "spotLight.position"), camera.GetPosition().x, camera.GetPosition().y, camera.GetPosition().z);
 		glUniform3f(glGetUniformLocation(lightingShader.Program, "spotLight.direction"), camera.GetFront().x, camera.GetFront().y, camera.GetFront().z);
 		glUniform3f(glGetUniformLocation(lightingShader.Program, "spotLight.ambient"), 1.0f, 1.0f, 1.0f);
 		glUniform3f(glGetUniformLocation(lightingShader.Program, "spotLight.diffuse"), 1.0f, 1.0f, 1.0f);
@@ -282,10 +288,10 @@ int main()
 		glUniform1f(glGetUniformLocation(lightingShader.Program, "spotLight.linear"), 0.07f);
 		glUniform1f(glGetUniformLocation(lightingShader.Program, "spotLight.quadratic"), 0.17f);
 		glUniform1f(glGetUniformLocation(lightingShader.Program, "spotLight.cutOff"), glm::cos(glm::radians(12.5f)));
-		glUniform1f(glGetUniformLocation(lightingShader.Program, "spotLight.outerCutOff"), glm::cos(glm::radians(15.0f)));
+		glUniform1f(glGetUniformLocation(lightingShader.Program, "spotLight.outerCutOff"), glm::cos(glm::radians(15.0f)));*/
 
 		// Set material properties
-		glUniform1f(glGetUniformLocation(lightingShader.Program, "material.shininess"), 16.0f);
+		glUniform1f(glGetUniformLocation(lightingShader.Program, "material.shininess"), 32.0f);
 
 		// Create camera transformations
 		glm::mat4 view;
@@ -300,8 +306,16 @@ int main()
 		glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view));
 		glUniformMatrix4fv(projLoc, 1, GL_FALSE, glm::value_ptr(projection));
 
-
 		glm::mat4 model(1);
+
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-7.0f, -2.0f, -3.0f));
+		model = glm::rotate(model, glm::radians(85.0f), glm::vec3(0.0f, 1.0, 0.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 2.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1f(glGetUniformLocation(lightingShader.Program, "activTransparencia"), 0.0f);
+		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0f, 1.0f, 1.0f, 1.0f);
+		Tabla.Draw(lightingShader);
 		glBindVertexArray(0);
 	
 		// Also draw the lamp object, again binding the appropriate shader
@@ -330,23 +344,45 @@ int main()
 		glUniformMatrix4fv(projLoc, 1, GL_FALSE, glm::value_ptr(projection));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(0.0f, 0.0f, -8.0f));
+		model = glm::translate(model, glm::vec3(0.0f, -2.0f, -25.0f));
 		glUniform1f(glGetUniformLocation(Anim.Program,"time"), tiempo);
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		Piso.Draw(Anim);
 		glBindVertexArray(0);
 
 		shader.Use();
+		modelLoc = glGetUniformLocation(shader.Program, "model");
+		viewLoc = glGetUniformLocation(shader.Program, "view");
+		projLoc = glGetUniformLocation(shader.Program, "projection");
 		glUniformMatrix4fv(glGetUniformLocation(shader.Program, "projection"), 1, GL_FALSE, glm::value_ptr(projection));
 		glUniformMatrix4fv(glGetUniformLocation(shader.Program, "view"), 1, GL_FALSE, glm::value_ptr(view));
+		glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
 		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(0.0f, 0.0f, -8.0f));
+		model = glm::translate(model, glm::vec3(0.0f, -2.0f, -25.0f));
+		model = glm::scale(model, glm::vec3(8.0f, 8.0f, 8.0f));
+		glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
+		Fachada.Draw(shader);
+
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(0.0f, -2.0f, -25.0f));
 		glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
 		Jaula.Draw(shader);
+
 		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(0.0f, 0.77f, -8.0f));
+		model = glm::translate(model, glm::vec3(0.0f, -1.23f, -25.0f)); //(0,0.77,0)
 		glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
 		Penguin.Draw(shader);
+
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-7.0f, -2.0f, -3.0f)); 
+		model = glm::rotate(model, glm::radians(85.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 2.0f));
+		glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
+		Mesa.Draw(shader);
+
+		glBindVertexArray(0);
+
+		
 
 
 
