@@ -176,6 +176,7 @@ int main()
 	Model Pez_Dorado((char*)"Models/Pez_Dorado/Pez_Dorado.obj");
 	Model Silla((char*)"Models/Silla/Silla.obj");
 	Model Cojin((char*)"Models/Silla/Cojines.obj");
+	Model Persona((char*)"Models/Persona/Character_2.obj");
 
 
 
@@ -317,17 +318,41 @@ int main()
 		model = glm::scale(model, glm::vec3(8.0f, 8.0f, 8.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1f(glGetUniformLocation(lightingShader.Program, "activTransparencia"), 0.0f);
+		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0f, 1.0f, 1.0f, 0.1f);
+		Fachada.Draw(shader);
+
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(0.0f, -2.0f, -25.0f));
+		model = glm::scale(model, glm::vec3(8.0f, 8.0f, 8.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1f(glGetUniformLocation(lightingShader.Program, "activTransparencia"), 0.0f);
 		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0f, 1.0f, 1.0f, 1.0f);
 		Suelo.Draw(lightingShader);
 		
 		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(-7.0f, -2.6f, -3.0f));
+		model = glm::translate(model, glm::vec3(-7.0f, -2.6f, -6.0f));
 		model = glm::rotate(model, glm::radians(85.0f), glm::vec3(0.0f, 1.0f, 0.0f));
-		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 2.0f));
+		model = glm::scale(model, glm::vec3(2.0f, 1.5f, 2.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1f(glGetUniformLocation(lightingShader.Program, "activTransparencia"), 0.0f);
 		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0f, 1.0f, 1.0f, 1.0f);
 		Mesa.Draw(lightingShader);
+
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(12.0f, -2.6f, -25.0f));
+		model = glm::rotate(model, glm::radians(-90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1f(glGetUniformLocation(lightingShader.Program, "activTransparencia"), 0.0f);
+		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0f, 1.0f, 1.0f, 1.0f);
+		Mesa.Draw(lightingShader);
+
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(11.7f, -0.05f, -26.0f));
+		model = glm::scale(model, glm::vec3(0.1f, 0.1f, 0.1f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1f(glGetUniformLocation(lightingShader.Program, "activTransparencia"), 0.0f);
+		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0f, 1.0f, 1.0f, 1.0f);
+		Pez_Dorado.Draw(lightingShader);
 
 		model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(0.0f, -1.63f, -25.0f));
@@ -344,7 +369,7 @@ int main()
 		Reja.Draw(lightingShader);
 
 		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(9.0f, 1.0f, -25.0f));
+		model = glm::translate(model, glm::vec3(11.7f, -0.25f, -26.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1f(glGetUniformLocation(lightingShader.Program, "activTransparencia"), 0.0f);
 		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0f, 1.0f, 1.0f, 1.0f);
@@ -362,9 +387,9 @@ int main()
 		model = glm::mat4(1);
 		glEnable(GL_BLEND);//Avtiva la funcionalidad para trabajar el canal alfa
 		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-		model = glm::translate(model, glm::vec3(-7.0f, -2.6f, -3.0f));
+		model = glm::translate(model, glm::vec3(-7.0f, -1.5f, -6.0f));
 		model = glm::rotate(model, glm::radians(85.0f), glm::vec3(0.0f, 1.0, 0.0f));
-		model = glm::scale(model, glm::vec3(1.0f, 1.0f, 2.0f));
+		model = glm::scale(model, glm::vec3(2.0f, 1.0f, 2.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0f, 1.0f, 1.0f, 0.65f);
 		Tabla.Draw(lightingShader);
@@ -373,29 +398,22 @@ int main()
 		model = glm::mat4(1);
 		glEnable(GL_BLEND);//Avtiva la funcionalidad para trabajar el canal alfa
 		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-		model = glm::translate(model, glm::vec3(9.0f, 1.0f, -25.0f));
+		model = glm::translate(model, glm::vec3(12.0f, -2.6f, -25.0f));
+		model = glm::rotate(model, glm::radians(-90.0f), glm::vec3(0.0f, 1.0, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0f, 1.0f, 1.0f, 0.65f);
+		Tabla.Draw(lightingShader);
+		glDisable(GL_BLEND);
+
+		model = glm::mat4(1);
+		glEnable(GL_BLEND);//Avtiva la funcionalidad para trabajar el canal alfa
+		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+		model = glm::translate(model, glm::vec3(11.7f, -0.25f, -26.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0f, 1.0f, 1.0f, 0.65f);
 		Pecera.Draw(lightingShader);
 		glDisable(GL_BLEND);
 
-		glBindVertexArray(0);
-	
-		// Also draw the lamp object, again binding the appropriate shader
-		lampShader.Use();
-		// Get location objects for the matrices on the lamp shader (these could be different on a different shader)
-		modelLoc = glGetUniformLocation(lampShader.Program, "model");
-		viewLoc = glGetUniformLocation(lampShader.Program, "view");
-		projLoc = glGetUniformLocation(lampShader.Program, "projection");
-		// Set matrices
-		glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view));
-		glUniformMatrix4fv(projLoc, 1, GL_FALSE, glm::value_ptr(projection)); 
-	    glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(0.0f,0.1f,0.0f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		//SV.Draw(lampShader);
-		/*Piso.Draw(lampShader);*/
 		glBindVertexArray(0);
 
 		Anim.Use();
@@ -420,11 +438,6 @@ int main()
 		glUniformMatrix4fv(glGetUniformLocation(shader.Program, "projection"), 1, GL_FALSE, glm::value_ptr(projection));
 		glUniformMatrix4fv(glGetUniformLocation(shader.Program, "view"), 1, GL_FALSE, glm::value_ptr(view));
 		glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
-		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(0.0f, -2.0f, -25.0f));
-		model = glm::scale(model, glm::vec3(8.0f, 8.0f, 8.0f));
-		glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
-		Fachada.Draw(shader);
 
 		model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(0.0f, -1.9f, -25.0f));
@@ -446,6 +459,14 @@ int main()
 		glUniform1f(glGetUniformLocation(shader.Program, "activTransparencia"), 0.0f);
 		glUniform4f(glGetUniformLocation(shader.Program, "colorAlpha"), 1.0f, 1.0f, 1.0f, 1.0f);
 		Cojin.Draw(shader);
+
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(0.0f, -2.0f, -44.0f));
+		model = glm::scale(model, glm::vec3(0.8f, 0.8f, 0.8f));
+		glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1f(glGetUniformLocation(shader.Program, "activTransparencia"), 0.0f);
+		glUniform4f(glGetUniformLocation(shader.Program, "colorAlpha"), 1.0f, 1.0f, 1.0f, 1.0f);
+		Persona.Draw(shader);
 
 		glBindVertexArray(0);
 

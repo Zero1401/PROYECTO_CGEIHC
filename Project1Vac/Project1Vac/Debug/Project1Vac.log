@@ -1,10 +1,5 @@
 ﻿  316032863_REPORTE8_GPO12 .cpp
-D:\Documents\GitHub\PROYECTO_CGEIHC\Project1Vac\Project1Vac\316032863_REPORTE8_GPO12 .cpp(208,24): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-D:\Documents\GitHub\PROYECTO_CGEIHC\Project1Vac\Project1Vac\316032863_REPORTE8_GPO12 .cpp(243,20): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
-          with
-          [
-              T=float
-          ]
+D:\Documents\GitHub\PROYECTO_CGEIHC\Project1Vac\Project1Vac\316032863_REPORTE8_GPO12 .cpp(209,24): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
 D:\Documents\GitHub\PROYECTO_CGEIHC\Project1Vac\Project1Vac\316032863_REPORTE8_GPO12 .cpp(244,20): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
           with
           [
@@ -15,11 +10,16 @@ D:\Documents\GitHub\PROYECTO_CGEIHC\Project1Vac\Project1Vac\316032863_REPORTE8_G
           [
               T=float
           ]
-D:\Documents\GitHub\PROYECTO_CGEIHC\Project1Vac\Project1Vac\316032863_REPORTE8_GPO12 .cpp(402,26): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
-D:\Documents\GitHub\PROYECTO_CGEIHC\Project1Vac\Project1Vac\316032863_REPORTE8_GPO12 .cpp(569,11): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-D:\Documents\GitHub\PROYECTO_CGEIHC\Project1Vac\Project1Vac\316032863_REPORTE8_GPO12 .cpp(570,11): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-D:\Documents\GitHub\PROYECTO_CGEIHC\Project1Vac\Project1Vac\316032863_REPORTE8_GPO12 .cpp(574,18): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-D:\Documents\GitHub\PROYECTO_CGEIHC\Project1Vac\Project1Vac\316032863_REPORTE8_GPO12 .cpp(575,18): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-D:\Documents\GitHub\PROYECTO_CGEIHC\Project1Vac\Project1Vac\316032863_REPORTE8_GPO12 .cpp(577,10): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-D:\Documents\GitHub\PROYECTO_CGEIHC\Project1Vac\Project1Vac\316032863_REPORTE8_GPO12 .cpp(578,10): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+D:\Documents\GitHub\PROYECTO_CGEIHC\Project1Vac\Project1Vac\316032863_REPORTE8_GPO12 .cpp(246,20): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+          with
+          [
+              T=float
+          ]
+D:\Documents\GitHub\PROYECTO_CGEIHC\Project1Vac\Project1Vac\316032863_REPORTE8_GPO12 .cpp(420,26): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+D:\Documents\GitHub\PROYECTO_CGEIHC\Project1Vac\Project1Vac\316032863_REPORTE8_GPO12 .cpp(590,11): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+D:\Documents\GitHub\PROYECTO_CGEIHC\Project1Vac\Project1Vac\316032863_REPORTE8_GPO12 .cpp(591,11): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+D:\Documents\GitHub\PROYECTO_CGEIHC\Project1Vac\Project1Vac\316032863_REPORTE8_GPO12 .cpp(595,18): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+D:\Documents\GitHub\PROYECTO_CGEIHC\Project1Vac\Project1Vac\316032863_REPORTE8_GPO12 .cpp(596,18): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+D:\Documents\GitHub\PROYECTO_CGEIHC\Project1Vac\Project1Vac\316032863_REPORTE8_GPO12 .cpp(598,10): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+D:\Documents\GitHub\PROYECTO_CGEIHC\Project1Vac\Project1Vac\316032863_REPORTE8_GPO12 .cpp(599,10): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
   Project1Vac.vcxproj -> D:\Documents\GitHub\PROYECTO_CGEIHC\Project1Vac\Debug\Project1Vac.exe
