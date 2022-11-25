@@ -177,6 +177,7 @@ int main()
 	Model Silla((char*)"Models/Silla/Silla.obj");
 	Model Cojin((char*)"Models/Silla/Cojines.obj");
 	Model Persona((char*)"Models/Persona/Character_2.obj");
+	Model Entrada((char*)"Models/Fachada/Entrada.obj");
 
 
 
@@ -318,14 +319,6 @@ int main()
 		model = glm::scale(model, glm::vec3(8.0f, 8.0f, 8.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform1f(glGetUniformLocation(lightingShader.Program, "activTransparencia"), 0.0f);
-		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0f, 1.0f, 1.0f, 0.1f);
-		Fachada.Draw(shader);
-
-		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(0.0f, -2.0f, -25.0f));
-		model = glm::scale(model, glm::vec3(8.0f, 8.0f, 8.0f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1f(glGetUniformLocation(lightingShader.Program, "activTransparencia"), 0.0f);
 		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0f, 1.0f, 1.0f, 1.0f);
 		Suelo.Draw(lightingShader);
 		
@@ -383,6 +376,24 @@ int main()
 		glUniform1f(glGetUniformLocation(lightingShader.Program, "activTransparencia"), 0.0f);
 		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0f, 1.0f, 1.0f, 1.0f);
 		Silla.Draw(lightingShader);
+
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(0.0f, -2.0f, -25.0f));
+		model = glm::scale(model, glm::vec3(8.0f, 8.0f, 8.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1f(glGetUniformLocation(lightingShader.Program, "activTransparencia"), 0.0f);
+		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0f, 1.0f, 1.0f, 1.0f);
+		Entrada.Draw(lightingShader);
+
+		model = glm::mat4(1);
+		glEnable(GL_BLEND);//Avtiva la funcionalidad para trabajar el canal alfa
+		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+		model = glm::translate(model, glm::vec3(0.0f, -2.0f, -25.0f));
+		model = glm::scale(model, glm::vec3(8.0f, 8.0f, 8.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 0.0f, 0.0f, 1.0f, 1.0f);
+		Fachada.Draw(lightingShader);
+		glDisable(GL_BLEND);
 
 		model = glm::mat4(1);
 		glEnable(GL_BLEND);//Avtiva la funcionalidad para trabajar el canal alfa
