@@ -28,6 +28,7 @@
 void KeyCallback(GLFWwindow *window, int key, int scancode, int action, int mode);
 void MouseCallback(GLFWwindow *window, double xPos, double yPos);
 void DoMovement();
+void animacion();
 
 // Window dimensions
 const GLuint WIDTH = 800, HEIGHT = 600;
@@ -41,11 +42,15 @@ bool keys[1024];
 bool firstMouse = true;
 // Light attributes
 glm::vec3 lightPos(0.0f, 0.0f, 0.0f);
-bool active;
+glm::vec3 PosIni(0.0f, 0.0f, 0.0f);
 
+bool active;
+bool PueAC1, PueAC2 = false;
 float tiempo=1.0f;
 float speed = 1.0f;
 float speed2 = 0.5f;
+float rotV = 0.0f;
+float rotP = 0.0f;
 
 
 // Positions of the point lights
@@ -167,7 +172,8 @@ int main()
 	Model Isla((char*)"Models/Jaula/Isla.obj");
 	Model Reja((char*)"Models/Jaula/Jaula.obj");
 	Model Penguin((char*)"Models/Penguin/Penguin.obj");
-	Model Fachada((char*)"Models/Fachada/Fachada.obj");
+	Model FachadaA((char*)"Models/Fachada/FachadaA.obj");
+	Model FachadaB((char*)"Models/Fachada/FachadaB.obj");
 	Model Suelo((char*)"Models/Fachada/Suelo.obj");
 	Model Mesa((char*)"Models/Mesa/Mesa.obj");
 	Model Tabla((char*)"Models/Mesa/Tabla.obj");
@@ -179,6 +185,7 @@ int main()
 	Model Persona((char*)"Models/Persona/Character_2.obj");
 	Model Entrada((char*)"Models/Fachada/Entrada.obj");
 	Model Puertas((char*)"Models/Fachada/Puertas.obj");
+	Model Valvula((char*)"Models/Fachada/Valvula.obj");
 
 
 
@@ -215,6 +222,7 @@ int main()
 		// Check if any events have been activiated (key pressed, mouse moved etc.) and call corresponding response functions
 		glfwPollEvents();
 		DoMovement();
+		animacion();
 
 		// Clear the colorbuffer
 		glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
@@ -322,6 +330,40 @@ int main()
 		glUniform1f(glGetUniformLocation(lightingShader.Program, "activTransparencia"), 0.0f);
 		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0f, 1.0f, 1.0f, 1.0f);
 		Suelo.Draw(lightingShader);
+
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(0.0f, -1.9f, -25.0f));
+		model = glm::scale(model, glm::vec3(1.0f, 1.5f, 1.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1f(glGetUniformLocation(lightingShader.Program, "activTransparencia"), 0.0f);
+		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0f, 1.0f, 1.0f, 1.0f);
+		Jaula.Draw(lightingShader);
+
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(0.0f, -1.03f, -25.0f)); //(0,0.77,0)
+		model = glm::scale(model, glm::vec3(0.5f, 0.5f, 0.5f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1f(glGetUniformLocation(lightingShader.Program, "activTransparencia"), 0.0f);
+		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0f, 1.0f, 1.0f, 1.0f);
+		Penguin.Draw(lightingShader);
+
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(0.0f, -2.0f, -44.0f));
+		model = glm::scale(model, glm::vec3(0.8f, 0.8f, 0.8f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1f(glGetUniformLocation(lightingShader.Program, "activTransparencia"), 0.0f);
+		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0f, 1.0f, 1.0f, 1.0f);
+		Persona.Draw(lightingShader);
+
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(0.0f, -1.65f, -45.0f));
+		model = glm::rotate(model, glm::radians(-90.0f), glm::vec3(0.0f, 1.0, 0.0f));
+		model = glm::scale(model, glm::vec3(0.5f, 0.5f, 0.5f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1f(glGetUniformLocation(lightingShader.Program, "activTransparencia"), 0.0f);
+		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0f, 1.0f, 1.0f, 1.0f);
+		Cojin.Draw(lightingShader);
+
 		
 		model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(-7.0f, -2.6f, -6.0f));
@@ -387,14 +429,30 @@ int main()
 		Entrada.Draw(lightingShader);
 
 		model = glm::mat4(1);
-		glEnable(GL_BLEND);//Avtiva la funcionalidad para trabajar el canal alfa
-		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 		model = glm::translate(model, glm::vec3(0.0f, -2.0f, -25.0f));
 		model = glm::scale(model, glm::vec3(8.0f, 8.0f, 8.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0f, 1.0f, 1.0f, 0.15f);
-		Fachada.Draw(lightingShader);
-		glDisable(GL_BLEND);
+		glUniform1f(glGetUniformLocation(lightingShader.Program, "activTransparencia"), 0.0f);
+		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0f, 1.0f, 1.0f, 1.0f);
+		FachadaB.Draw(lightingShader);
+
+		model = glm::mat4(1);
+		model = glm::rotate(model, glm::radians(rotP), glm::vec3(0.0f, 1.0f, 0.0));
+		model = glm::translate(model, glm::vec3(0.0f, -2.0f, -25.0f));
+		model = glm::scale(model, glm::vec3(8.0f, 8.0f, 8.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1f(glGetUniformLocation(lightingShader.Program, "activTransparencia"), 0.0f);
+		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0f, 1.0f, 1.0f, 1.0f);
+		Puertas.Draw(lightingShader);
+
+		model = glm::mat4(1);
+		model = glm::rotate(model, glm::radians(rotV), glm::vec3(0.0f, 0.0f, 1.0));
+		model = glm::translate(model, glm::vec3(0.0f, -2.0f, -25.0f));
+		model = glm::scale(model, glm::vec3(8.0f, 8.0f, 8.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform1f(glGetUniformLocation(lightingShader.Program, "activTransparencia"), 0.0f);
+		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0f, 1.0f, 1.0f, 1.0f);
+		Valvula.Draw(lightingShader);
 
 		model = glm::mat4(1);
 		glEnable(GL_BLEND);//Avtiva la funcionalidad para trabajar el canal alfa
@@ -402,8 +460,8 @@ int main()
 		model = glm::translate(model, glm::vec3(0.0f, -2.0f, -25.0f));
 		model = glm::scale(model, glm::vec3(8.0f, 8.0f, 8.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0f, 1.0f, 1.0f, 0.65f);
-		Puertas.Draw(lightingShader);
+		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0f, 1.0f, 1.0f, 0.15f);
+		FachadaA.Draw(lightingShader);
 		glDisable(GL_BLEND);
 
 		model = glm::mat4(1);
@@ -452,46 +510,6 @@ int main()
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		Piso.Draw(Anim);
 		glBindVertexArray(0);
-
-		shader.Use();
-		modelLoc = glGetUniformLocation(shader.Program, "model");
-		viewLoc = glGetUniformLocation(shader.Program, "view");
-		projLoc = glGetUniformLocation(shader.Program, "projection");
-		glUniformMatrix4fv(glGetUniformLocation(shader.Program, "projection"), 1, GL_FALSE, glm::value_ptr(projection));
-		glUniformMatrix4fv(glGetUniformLocation(shader.Program, "view"), 1, GL_FALSE, glm::value_ptr(view));
-		glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
-
-		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(0.0f, -1.9f, -25.0f));
-		model = glm::scale(model, glm::vec3(1.0f, 1.5f, 1.0f));
-		glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
-		Jaula.Draw(shader);
-		
-		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(0.0f, -1.03f, -25.0f)); //(0,0.77,0)
-		model = glm::scale(model, glm::vec3(0.5f, 0.5f, 0.5f));
-		glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
-		Penguin.Draw(shader);
-
-		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(0.0f, -1.65f, -45.0f));
-		model = glm::rotate(model, glm::radians(-90.0f), glm::vec3(0.0f, 1.0, 0.0f));
-		model = glm::scale(model, glm::vec3(0.5f, 0.5f, 0.5f));
-		glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1f(glGetUniformLocation(shader.Program, "activTransparencia"), 0.0f);
-		glUniform4f(glGetUniformLocation(shader.Program, "colorAlpha"), 1.0f, 1.0f, 1.0f, 1.0f);
-		Cojin.Draw(shader);
-
-		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(0.0f, -2.0f, -44.0f));
-		model = glm::scale(model, glm::vec3(0.8f, 0.8f, 0.8f));
-		glUniformMatrix4fv(glGetUniformLocation(shader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1f(glGetUniformLocation(shader.Program, "activTransparencia"), 0.0f);
-		glUniform4f(glGetUniformLocation(shader.Program, "colorAlpha"), 1.0f, 1.0f, 1.0f, 1.0f);
-		Persona.Draw(shader);
-
-		glBindVertexArray(0);
-
 		
 
 
@@ -568,7 +586,28 @@ void DoMovement()
 		pointLightPositions[0].z += 0.01f;
 	}
 
+	if (keys[GLFW_KEY_1])
+	{
+		PueAC1 = true;
+	}
+
 	
+}
+
+void animacion() {
+	if (PueAC1) {
+		rotV += 1.0f;
+		if (rotV > 270 && rotV < 360) {
+			PueAC1 = false;
+			PueAC2 = true;
+		}
+	}
+	if (PueAC2) {
+		rotP + 1.0f;
+		if (rotP > 90) {
+			PueAC2 = false;
+		}
+	}
 }
 
 // Is called whenever a key is pressed/released via GLFW
