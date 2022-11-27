@@ -176,8 +176,8 @@ int main()
 	Model FachadaA((char*)"Models/Fachada/FachadaA.obj");
 	Model FachadaB((char*)"Models/Fachada/FachadaB.obj");
 	Model Suelo((char*)"Models/Fachada/Suelo.obj");
-	Model Mesa((char*)"Models/Mesa/Mesa.obj");
-	Model Tabla((char*)"Models/Mesa/Tabla.obj");
+	Model Mesa((char*)"Models/Mesa/Mesa2.obj");
+	Model Tabla((char*)"Models/Mesa/Tabla2.obj");
 	Model Pecera((char*)"Models/Pecera/PeceraP.obj");
 	Model PecParB((char*)"Models/Pecera/PecParB.obj");
 	Model PecPar((char*)"Models/Pecera/PecPar.obj");
@@ -350,9 +350,9 @@ int main()
 		Penguin.Draw(lightingShader);
 
 		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(-7.0f, -2.6f, -6.0f));
-		model = glm::rotate(model, glm::radians(85.0f), glm::vec3(0.0f, 1.0f, 0.0f));
-		model = glm::scale(model, glm::vec3(2.0f, 1.5f, 2.0f));
+		model = glm::translate(model, glm::vec3(-9.0f, -2.0f, -12.0f));
+		model = glm::rotate(model, glm::radians(225.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(2.0f, 4.0f, 2.5f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0f, 1.0f, 1.0f, 1.0f);
 		Mesa.Draw(lightingShader);
@@ -441,9 +441,9 @@ int main()
 		model = glm::mat4(1);
 		glEnable(GL_BLEND);//Avtiva la funcionalidad para trabajar el canal alfa
 		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-		model = glm::translate(model, glm::vec3(-7.0f, -1.5f, -6.0f));
-		model = glm::rotate(model, glm::radians(85.0f), glm::vec3(0.0f, 1.0, 0.0f));
-		model = glm::scale(model, glm::vec3(2.0f, 1.0f, 2.0f));
+		model = glm::translate(model, glm::vec3(-9.0f, -0.95f, -12.0f));
+		model = glm::rotate(model, glm::radians(225.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(2.0f, 1.5f, 2.5f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0f, 1.0f, 1.0f, 0.65f);
 		Tabla.Draw(lightingShader);
