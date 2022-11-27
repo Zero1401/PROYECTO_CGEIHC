@@ -45,13 +45,17 @@ glm::vec3 lightPos(0.0f, 0.0f, 0.0f);
 glm::vec3 PosIni(0.0f, 0.0f, 0.0f);
 
 bool active;
+bool ida = false;
 bool PueAC1, PueAC2 = false;
 bool PueCA1, PueCA2 = false;
 float tiempo=1.0f;
 float speed = 1.0f;
 float speed2 = 0.5f;
-float rotV = 0.0f;
+float rotV, rotV2 = 0.0f;
 float rotP = 0.0f;
+float movXV, movZV = 0.0f;
+float mov = 0.0f;
+float rot = 0.0f;
 
 
 // Positions of the point lights
@@ -192,6 +196,15 @@ int main()
 	Model Puertas((char*)"Models/Fachada/Puertas.obj");
 	Model Valvula((char*)"Models/Fachada/Valvula.obj");
 	Model Tiburon((char*)"Models/Tiburon/SHARK.obj");
+
+	//Peces
+	Model P1((char*)"Models/Peces/PezCu1.obj");
+	Model PC1((char*)"Models/Peces/PezC1.obj");
+	Model P2((char*)"Models/Peces/PezCu2.obj");
+	Model PC2((char*)"Models/Peces/PezC2.obj");
+	Model P3((char*)"Models/Peces/PezCu3.obj");
+	Model PC3((char*)"Models/Peces/PezC3.obj");
+
 
 
 
@@ -420,6 +433,8 @@ int main()
 		model = glm::translate(model, glm::vec3(0.0f, 2.0f, 7.5f));
 		model = glm::rotate(model, glm::radians(rotV), glm::vec3(0.0f, 0.0f, 1.0));
 		model = glm::scale(model, glm::vec3(8.0f, 8.0f, 8.0f));
+		model = glm::translate(model, glm::vec3(0.0f, movXV, movZV));
+		model = glm::rotate(model, glm::radians(-rotP), glm::vec3(1.0f, 0.0f, 0.0));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0f, 1.0f, 1.0f, 1.0f);
 		Valvula.Draw(lightingShader);
@@ -520,6 +535,68 @@ int main()
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0f, 1.0f, 1.0f, 1.0f);
 		Tiburon.Draw(lightingShader);
+
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-9.0f, 3.0f, -3.0f));
+		model = glm::rotate(model, glm::radians(-90.0f), glm::vec3(0.0f, 1.0f, 0.0));
+		model = glm::scale(model, glm::vec3(0.1f, 0.1f, 0.1f));
+		model = glm::translate(model, glm::vec3(-9.0f, 3.0f, mov));
+		model = glm::rotate(model, glm::radians(rot), glm::vec3(0.0f, 1.0f, 0.0));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0f, 1.0f, 1.0f, 1.0f);
+		P1.Draw(lightingShader);
+
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-9.0f, 3.0f, -3.0f));
+		model = glm::rotate(model, glm::radians(-90.0f), glm::vec3(0.0f, 1.0f, 0.0));
+		model = glm::scale(model, glm::vec3(0.1f, 0.1f, 0.1f));
+		model = glm::translate(model, glm::vec3(-9.0, 3.0f, mov));
+		model = glm::rotate(model, glm::radians(rot), glm::vec3(0.0f, 1.0f, 0.0));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0f, 1.0f, 1.0f, 1.0f);
+		PC1.Draw(lightingShader);
+
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-14.0f, 3.0f, -8.0f));
+		model = glm::rotate(model, glm::radians(-75.0f), glm::vec3(0.0f, 1.0f, 0.0));
+		model = glm::scale(model, glm::vec3(0.1f, 0.1f, 0.1f));
+		model = glm::translate(model, glm::vec3(-9.0f, 3.0f, mov));
+		model = glm::rotate(model, glm::radians(rot), glm::vec3(0.0f, 1.0f, 0.0));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0f, 1.0f, 1.0f, 1.0f);
+		P2.Draw(lightingShader);
+
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-14.0f, 3.0f, -8.0f));
+		model = glm::rotate(model, glm::radians(-75.0f), glm::vec3(0.0f, 1.0f, 0.0));
+		model = glm::scale(model, glm::vec3(0.1f, 0.1f, 0.1f));
+		model = glm::translate(model, glm::vec3(-9.0, 3.0f, mov));
+		model = glm::rotate(model, glm::radians(rot), glm::vec3(0.0f, 1.0f, 0.0));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0f, 1.0f, 1.0f, 1.0f);
+		PC2.Draw(lightingShader);
+
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-18.0f, 3.0f, -15.0f));
+		//model = glm::rotate(model, glm::radians(-75.0f), glm::vec3(0.0f, 1.0f, 0.0));
+		model = glm::scale(model, glm::vec3(0.1f, 0.1f, 0.1f));
+		model = glm::translate(model, glm::vec3(-9.0f, 3.0f, mov));
+		model = glm::rotate(model, glm::radians(rot), glm::vec3(0.0f, 1.0f, 0.0));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0f, 1.0f, 1.0f, 1.0f);
+		P3.Draw(lightingShader);
+
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(-18.0f, 3.0f, -15.0f));
+		//model = glm::rotate(model, glm::radians(-75.0f), glm::vec3(0.0f, 1.0f, 0.0));
+		model = glm::scale(model, glm::vec3(0.1f, 0.1f, 0.1f));
+		model = glm::translate(model, glm::vec3(-9.0, 3.0f, mov));
+		model = glm::rotate(model, glm::radians(rot), glm::vec3(0.0f, 1.0f, 0.0));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0f, 1.0f, 1.0f, 1.0f);
+		PC3.Draw(lightingShader);
+
+
 
 		model = glm::mat4(1);
 		glEnable(GL_BLEND);//Avtiva la funcionalidad para trabajar el canal alfa
@@ -668,6 +745,8 @@ void animacion() {
 	}
 	if (PueAC2) {
 		rotP += 1.0f;
+		movXV += 0.0055f;
+		movZV += 0.0055f;
 		if (rotP > 90) {
 			PueAC2 = false;
 		}
@@ -675,6 +754,8 @@ void animacion() {
 
 	if (PueCA1) {
 		rotP -= 1.0f;
+		movXV -= 0.0055f;
+		movZV -= 0.0055f;
 		if (rotP < 0) {
 			PueCA1 = false;
 			PueCA2 = true;
@@ -684,6 +765,22 @@ void animacion() {
 		rotV -= 1.0f;
 		if (rotV <= 0) {
 			PueCA2 = false;
+		}
+	}
+
+	if (!ida) {
+		mov += 0.2f;
+		if (mov >= 12.0f) {
+			rot = 180.0f;
+			ida = true;
+		}
+	}
+
+	if (ida) {
+		mov -= 0.2f;
+		if (mov < 0.0f) {
+			rot = 360.0f;
+			ida = false;
 		}
 	}
 }
