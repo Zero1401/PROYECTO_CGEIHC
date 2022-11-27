@@ -177,16 +177,18 @@ int main()
 	Model FachadaB((char*)"Models/Fachada/FachadaB.obj");
 	Model Suelo((char*)"Models/Fachada/Suelo.obj");
 	Model Mesa((char*)"Models/Mesa/Mesa2.obj");
+	Model MesaC((char*)"Models/Mesa/MesaCom.obj");
 	Model Tabla((char*)"Models/Mesa/Tabla2.obj");
 	Model Pecera((char*)"Models/Pecera/PeceraP.obj");
 	Model PecParB((char*)"Models/Pecera/PecParB.obj");
 	Model PecPar((char*)"Models/Pecera/PecPar.obj");
 	Model Sel((char*)"Models/Pecera/Caja2.obj");
 	Model Pez_Dorado((char*)"Models/Pez_Dorado/Pez_Dorado.obj");
-	Model Silla((char*)"Models/Silla/Silla.obj");
-	Model Cojin((char*)"Models/Silla/Cojines.obj");
+	Model SillaCB((char*)"Models/Silla/BSillaCom.obj");
+	Model SillaCT((char*)"Models/Silla/TSillaCom.obj");
 	Model Persona((char*)"Models/Persona/Character_2.obj");
 	Model Entrada((char*)"Models/Fachada/Entrada.obj");
+	Model Nombre((char*)"Models/Fachada/Nombre.obj");
 	Model Puertas((char*)"Models/Fachada/Puertas.obj");
 	Model Valvula((char*)"Models/Fachada/Valvula.obj");
 	Model Tiburon((char*)"Models/Tiburon/SHARK.obj");
@@ -378,13 +380,19 @@ int main()
 		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0f, 1.0f, 1.0f, 1.0f);
 		Reja.Draw(lightingShader);
 
-
 		model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(0.0f, -2.0f, -25.0f));
 		model = glm::scale(model, glm::vec3(8.0f, 8.0f, 8.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0f, 1.0f, 1.0f, 1.0f);
 		Entrada.Draw(lightingShader);
+
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(0.0f, 6.0f, 4.0f));
+		//model = glm::scale(model, glm::vec3(8.0f, 8.0f, 8.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0f, 1.0f, 1.0f, 1.0f);
+		Nombre.Draw(lightingShader);
 
 		model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(0.0f, -2.0f, -25.0f));
@@ -416,6 +424,91 @@ int main()
 		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0f, 1.0f, 1.0f, 1.0f);
 		Valvula.Draw(lightingShader);
 
+		//Mesa atras
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(12.7f, -2.0f, -27.0f));
+		model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0));
+		model = glm::scale(model, glm::vec3(0.5f, 0.8f, 1.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0f, 1.0f, 1.0f, 1.0f);
+		MesaC.Draw(lightingShader);
+
+		//Mesa adelante
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(12.7f, -2.0f, -22.0f));
+		model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0));
+		model = glm::scale(model, glm::vec3(0.5f, 0.8f, 1.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0f, 1.0f, 1.0f, 1.0f);
+		MesaC.Draw(lightingShader);
+		
+		//Sillas mesa atras
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(11.0f, -1.2f, -27.0f));
+		model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0));
+		model = glm::scale(model, glm::vec3(1.5f, 1.0f, 1.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0f, 1.0f, 1.0f, 1.0f);
+		SillaCT.Draw(lightingShader);
+
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(11.0f, -1.5f, -27.0f));
+		model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0));
+		model = glm::scale(model, glm::vec3(1.0f, 1.5f, 1.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0f, 1.0f, 1.0f, 1.0f);
+		SillaCB.Draw(lightingShader);
+
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(14.0f, -1.2f, -27.0f));
+		model = glm::rotate(model, glm::radians(-75.0f), glm::vec3(0.0f, 1.0f, 0.0));
+		model = glm::scale(model, glm::vec3(1.5f, 1.0f, 1.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0f, 1.0f, 1.0f, 1.0f);
+		SillaCT.Draw(lightingShader);
+
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(14.0f, -1.5f, -27.0f));
+		model = glm::rotate(model, glm::radians(-75.0f), glm::vec3(0.0f, 1.0f, 0.0));
+		model = glm::scale(model, glm::vec3(1.0f, 1.5f, 1.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0f, 1.0f, 1.0f, 1.0f);
+		SillaCB.Draw(lightingShader);
+
+		//Sillas mesa adelante
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(11.0f, -1.2f, -22.0f));
+		model = glm::rotate(model, glm::radians(75.0f), glm::vec3(0.0f, 1.0f, 0.0));
+		model = glm::scale(model, glm::vec3(1.5f, 1.0f, 1.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0f, 1.0f, 1.0f, 1.0f);
+		SillaCT.Draw(lightingShader);
+
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(11.0f, -1.5f, -22.0f));
+		model = glm::rotate(model, glm::radians(75.0f), glm::vec3(0.0f, 1.0f, 0.0));
+		model = glm::scale(model, glm::vec3(1.0f, 1.5f, 1.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0f, 1.0f, 1.0f, 1.0f);
+		SillaCB.Draw(lightingShader);
+
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(14.0f, -1.2f, -22.0f));
+		model = glm::rotate(model, glm::radians(-90.0f), glm::vec3(0.0f, 1.0f, 0.0));
+		model = glm::scale(model, glm::vec3(1.5f, 1.0f, 1.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0f, 1.0f, 1.0f, 1.0f);
+		SillaCT.Draw(lightingShader);
+
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(14.0f, -1.5f, -22.0f));
+		model = glm::rotate(model, glm::radians(-90.0f), glm::vec3(0.0f, 1.0f, 0.0));
+		model = glm::scale(model, glm::vec3(1.0f, 1.5f, 1.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0f, 1.0f, 1.0f, 1.0f);
+		SillaCB.Draw(lightingShader);
+
+		//Fuera
 		model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(0.0f, 15.0f, 3.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
