@@ -173,6 +173,7 @@ int main()
 	Shader shader("Shaders/modelLoading.vs", "Shaders/modelLoading.frag");
 	
 	Model Piso((char*)"Models/Jaula/Sea.obj");
+	Model Fondo((char*)"Models/Decoracion/Fondo.obj");
 	Model Jaula((char*)"Models/Jaula/Base.obj");
 	Model Isla((char*)"Models/Jaula/Isla.obj");
 	Model Reja((char*)"Models/Jaula/Jaula.obj");
@@ -363,6 +364,13 @@ int main()
 		glUniformMatrix4fv(projLoc, 1, GL_FALSE, glm::value_ptr(projection));
 
 		glm::mat4 model(1);
+
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(0.0f, -2.1f, -25.0f));
+		model = glm::scale(model, glm::vec3(15.0f, 1.0f, 15.0f));
+		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0f, 1.0f, 1.0f, 1.0f);
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		Fondo.Draw(lightingShader);
 
 		model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(0.0f, -2.0f, -25.0f));
