@@ -1,0 +1,70 @@
+newmtl PenguinC1:lambert2SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Cuerpo.png
+Ni 1.00
+newmtl PenguinC1:lambert3SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Blanco.png
+Ni 1.00
+newmtl PenguinC1:lambert3SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Pico.png
+Ni 1.00
+newmtl PenguinC1:lambert4SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Cuerpo.png
+Ni 1.00
+newmtl PenguinC1:lambert4SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Pico.png
+Ni 1.00
+newmtl caminos1:lambert4SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd fondo-azul-claro-de-la-textura-del-vidrio-esmerilado-color-124082015.jpg
+Ni 1.00
+newmtl domo2:lambert3SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd fondo-azul-claro-de-la-textura-del-vidrio-esmerilado-color-124082015.jpg
+Ni 1.00
+newmtl domo2:lambert4SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd fondo-azul-claro-de-la-textura-del-vidrio-esmerilado-color-124082015.jpg
+Ni 1.00
+newmtl domos3:lambert4SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd fondo-azul-claro-de-la-textura-del-vidrio-esmerilado-color-124082015.jpg
+Ni 1.00
+newmtl domos3:lambert4SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd fondo-azul-claro-de-la-textura-del-vidrio-esmerilado-color-124082015.jpg
+Ni 1.00

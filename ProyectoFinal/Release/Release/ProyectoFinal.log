@@ -1,0 +1,26 @@
+﻿  416041343_PROYECTOFINAL2023-1_GPO07.cpp
+C:\Users\Oraculo\Desktop\Repositorio\416041343_PROYECTOFINAL2023-1_GPO07\ProyectoFinal\ProyectoFinal\modelAnim.h(104,44): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Oraculo\Desktop\Repositorio\416041343_PROYECTOFINAL2023-1_GPO07\ProyectoFinal\ProyectoFinal\modelAnim.h(519,24): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Oraculo\Desktop\Repositorio\416041343_PROYECTOFINAL2023-1_GPO07\ProyectoFinal\ProyectoFinal\416041343_PROYECTOFINAL2023-1_GPO07.cpp(530,24): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+C:\Users\Oraculo\Desktop\Repositorio\416041343_PROYECTOFINAL2023-1_GPO07\ProyectoFinal\ProyectoFinal\416041343_PROYECTOFINAL2023-1_GPO07.cpp(937,26): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\Oraculo\Desktop\Repositorio\416041343_PROYECTOFINAL2023-1_GPO07\ProyectoFinal\ProyectoFinal\416041343_PROYECTOFINAL2023-1_GPO07.cpp(1143,11): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+C:\Users\Oraculo\Desktop\Repositorio\416041343_PROYECTOFINAL2023-1_GPO07\ProyectoFinal\ProyectoFinal\416041343_PROYECTOFINAL2023-1_GPO07.cpp(1144,11): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+C:\Users\Oraculo\Desktop\Repositorio\416041343_PROYECTOFINAL2023-1_GPO07\ProyectoFinal\ProyectoFinal\416041343_PROYECTOFINAL2023-1_GPO07.cpp(1148,18): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+C:\Users\Oraculo\Desktop\Repositorio\416041343_PROYECTOFINAL2023-1_GPO07\ProyectoFinal\ProyectoFinal\416041343_PROYECTOFINAL2023-1_GPO07.cpp(1149,18): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+C:\Users\Oraculo\Desktop\Repositorio\416041343_PROYECTOFINAL2023-1_GPO07\ProyectoFinal\ProyectoFinal\416041343_PROYECTOFINAL2023-1_GPO07.cpp(1151,10): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+C:\Users\Oraculo\Desktop\Repositorio\416041343_PROYECTOFINAL2023-1_GPO07\ProyectoFinal\ProyectoFinal\416041343_PROYECTOFINAL2023-1_GPO07.cpp(1152,10): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+C:\Users\Oraculo\Desktop\Repositorio\416041343_PROYECTOFINAL2023-1_GPO07\ProyectoFinal\ProyectoFinal\416041343_PROYECTOFINAL2023-1_GPO07.cpp(1163,15): warning C4305: '+=': truncamiento de 'double' a 'float'
+C:\Users\Oraculo\Desktop\Repositorio\416041343_PROYECTOFINAL2023-1_GPO07\ProyectoFinal\ProyectoFinal\416041343_PROYECTOFINAL2023-1_GPO07.cpp(1170,15): warning C4305: '-=': truncamiento de 'double' a 'float'
+C:\Users\Oraculo\Desktop\Repositorio\416041343_PROYECTOFINAL2023-1_GPO07\ProyectoFinal\ProyectoFinal\416041343_PROYECTOFINAL2023-1_GPO07.cpp(1176,15): warning C4305: '+=': truncamiento de 'double' a 'float'
+C:\Users\Oraculo\Desktop\Repositorio\416041343_PROYECTOFINAL2023-1_GPO07\ProyectoFinal\ProyectoFinal\416041343_PROYECTOFINAL2023-1_GPO07.cpp(1182,15): warning C4305: '-=': truncamiento de 'double' a 'float'
+soil2-debug.lib(SOIL2.obj) : warning LNK4075: se omite '/EDITANDCONTINUE' debido a la especificación '/OPT:ICF'
+LINK : warning LNK4098: la biblioteca predeterminada'MSVCRTD' entra en conflicto con otras bibliotecas; use la biblioteca /NODEFAULTLIB:biblioteca
+  Generando código
+  Previous IPDB not found, fall back to full compilation.
+  All 697 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Generación de código finalizada
+soil2-debug.lib(etc1_utils.obj) : warning LNK4099: no se encontró PDB 'soil2-debug.pdb' con 'soil2-debug.lib(etc1_utils.obj)' o en 'C:\Users\Oraculo\Desktop\Repositorio\416041343_PROYECTOFINAL2023-1_GPO07\ProyectoFinal\Release\soil2-debug.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
+soil2-debug.lib(image_DXT.obj) : warning LNK4099: no se encontró PDB 'soil2-debug.pdb' con 'soil2-debug.lib(image_DXT.obj)' o en 'C:\Users\Oraculo\Desktop\Repositorio\416041343_PROYECTOFINAL2023-1_GPO07\ProyectoFinal\Release\soil2-debug.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
+soil2-debug.lib(image_helper.obj) : warning LNK4099: no se encontró PDB 'soil2-debug.pdb' con 'soil2-debug.lib(image_helper.obj)' o en 'C:\Users\Oraculo\Desktop\Repositorio\416041343_PROYECTOFINAL2023-1_GPO07\ProyectoFinal\Release\soil2-debug.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
+soil2-debug.lib(SOIL2.obj) : warning LNK4099: no se encontró PDB 'soil2-debug.pdb' con 'soil2-debug.lib(SOIL2.obj)' o en 'C:\Users\Oraculo\Desktop\Repositorio\416041343_PROYECTOFINAL2023-1_GPO07\ProyectoFinal\Release\soil2-debug.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
+  ProyectoFinal.vcxproj -> C:\Users\Oraculo\Desktop\Repositorio\416041343_PROYECTOFINAL2023-1_GPO07\ProyectoFinal\Release\ProyectoFinal.exe

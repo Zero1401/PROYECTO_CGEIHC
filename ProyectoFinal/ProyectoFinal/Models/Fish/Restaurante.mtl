@@ -1,0 +1,98 @@
+newmtl initialShadingGroup
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd seamless-texture-black-brick-white-wall-vector-illustration-72909125.jpg
+Ni 1.00
+newmtl lambert4SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd ga_hero_1536x1536_300_standard.jpg
+Ni 1.00
+newmtl lambert5SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd ga_hero_1536x1536_300_standard.jpg
+Ni 1.00
+newmtl part1model:lambert2SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd descarga.jpg
+Ni 1.00
+newmtl part1model:lambert12SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd seamless-texture-black-brick-white-wall-vector-illustration-72909125.jpg
+Ni 1.00
+newmtl part1model:lambert13SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd istockphoto-1198966493-170667a.jpg
+Ni 1.00
+newmtl part1model:lambert15SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd descarga.jpg
+Ni 1.00
+newmtl part1model:lambert16SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd images.jpg
+Ni 1.00
+newmtl part1model:lambert18SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd seamless-texture-black-brick-white-wall-vector-illustration-72909125.jpg
+Ni 1.00
+newmtl part1model:lambert19SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd seamless-texture-black-brick-white-wall-vector-illustration-72909125.jpg
+Ni 1.00
+newmtl part1model:lambert20SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd seamless-texture-black-brick-white-wall-vector-illustration-72909125.jpg
+Ni 1.00
+newmtl part1model:part1model:lambert2SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd descarga.jpg
+Ni 1.00
+newmtl part1model:part1model1:lambert15SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd descarga.jpg
+Ni 1.00
+newmtl part1model:part1model2:part1model1:lambert15SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd descarga.jpg
+Ni 1.00

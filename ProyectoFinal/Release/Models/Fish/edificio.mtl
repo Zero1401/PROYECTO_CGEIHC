@@ -1,0 +1,370 @@
+newmtl Submarino1:lambert2SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd fondo-azul-claro-de-la-textura-del-vidrio-esmerilado-color-124082015.jpg
+Ni 1.00
+newmtl Submarino1:lambert5SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd istockphoto-1223670462-612x612.jpg
+Ni 1.00
+newmtl Submarino1:lambert6SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd metal-texture-background-with-copy-space-illustration-vector.jpg
+Ni 1.00
+newmtl Submarino1:lambert7SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl Submarino2:lambert2SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd fondo-azul-claro-de-la-textura-del-vidrio-esmerilado-color-124082015.jpg
+Ni 1.00
+newmtl Submarino2:lambert5SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd istockphoto-1223670462-612x612.jpg
+Ni 1.00
+newmtl Submarino2:lambert6SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd metal-texture-background-with-copy-space-illustration-vector.jpg
+Ni 1.00
+newmtl Submarino2:lambert7SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl Suelo:lambert5SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd 9546-v3.jpg
+Ni 1.00
+newmtl alga2:lambert6SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd istockphoto-1153255219-612x612.jpg
+Ni 1.00
+newmtl alga3:lambert6SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd istockphoto-1153255219-612x612.jpg
+Ni 1.00
+newmtl alga4:lambert6SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd istockphoto-1153255219-612x612.jpg
+Ni 1.00
+newmtl alga5:lambert6SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd istockphoto-1153255219-612x612.jpg
+Ni 1.00
+newmtl alga6:lambert6SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd istockphoto-1153255219-612x612.jpg
+Ni 1.00
+newmtl banner:lambert10SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd banner3.jpg
+Ni 1.00
+newmtl banner:lambert12SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd 202770.png
+Ni 1.00
+newmtl corales1:lambert9SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 0.95 0.95 0.95
+map_Kd istockphoto-1248247629-612x612.jpg
+Ni 1.00
+newmtl corales1:pasted__lambert9SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 0.95 0.95 0.95
+map_Kd istockphoto-1248247629-612x612.jpg
+Ni 1.00
+newmtl corales1:pasted__lambert9SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 0.95 0.95 0.95
+map_Kd istockphoto-1248247629-612x612.jpg
+Ni 1.00
+newmtl corales1:pasted__pasted__lambert9SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 0.95 0.95 0.95
+map_Kd istockphoto-1248247629-612x612.jpg
+Ni 1.00
+newmtl corales1:pasted__pasted__pasted__lambert9SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 0.95 0.95 0.95
+map_Kd istockphoto-1248247629-612x612.jpg
+Ni 1.00
+newmtl corales2:lambert10SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd images.jpg
+Ni 1.00
+newmtl corales2:pasted__lambert10SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd images.jpg
+Ni 1.00
+newmtl corales2:pasted__pasted__lambert10SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd images.jpg
+Ni 1.00
+newmtl corales2:pasted__pasted__pasted__lambert10SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd images.jpg
+Ni 1.00
+newmtl corales2:pasted__pasted__pasted__pasted__lambert10SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd images.jpg
+Ni 1.00
+newmtl corales2:pasted__pasted__pasted__pasted__pasted__lambert10SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd images.jpg
+Ni 1.00
+newmtl corales4:lambert12SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd 7486.jpg
+Ni 1.00
+newmtl corales4:pasted__lambert12SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd 7486.jpg
+Ni 1.00
+newmtl corales4:pasted__pasted__lambert12SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd 7486.jpg
+Ni 1.00
+newmtl corales4:pasted__pasted__pasted__lambert12SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd 7486.jpg
+Ni 1.00
+newmtl corales4:pasted__pasted__pasted__pasted__lambert12SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd 7486.jpg
+Ni 1.00
+newmtl corales5:lambert13SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd 266983517fff9bc4959df725c87f2580.jpg
+Ni 1.00
+newmtl corales5:pasted__lambert13SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd 266983517fff9bc4959df725c87f2580.jpg
+Ni 1.00
+newmtl corales5:pasted__lambert13SG2
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd 266983517fff9bc4959df725c87f2580.jpg
+Ni 1.00
+newmtl corales5:pasted__lambert13SG4
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd 266983517fff9bc4959df725c87f2580.jpg
+Ni 1.00
+newmtl corales6:lambert14SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd images_(2).jpg
+Ni 1.00
+newmtl corales6:pasted__lambert14SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd images_(2).jpg
+Ni 1.00
+newmtl corales6:pasted__pasted__lambert14SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd images_(2).jpg
+Ni 1.00
+newmtl corales7:lambert10SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd images.jpg
+Ni 1.00
+newmtl corales7:pasted__lambert10SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd images.jpg
+Ni 1.00
+newmtl corales7:pasted__pasted__lambert10SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd images.jpg
+Ni 1.00
+newmtl corales7:pasted__pasted__pasted__lambert10SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd images.jpg
+Ni 1.00
+newmtl corales7:pasted__pasted__pasted__pasted__lambert10SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd images.jpg
+Ni 1.00
+newmtl corales7:pasted__pasted__pasted__pasted__pasted__lambert10SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd images.jpg
+Ni 1.00
+newmtl domos:lambert4SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd fondo-azul-claro-de-la-textura-del-vidrio-esmerilado-color-124082015.jpg
+Ni 1.00
+newmtl fuente:lambert2SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd descarga.jpg
+Ni 1.00
+newmtl fuente:phongE1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd FUENTE.jpg
+Ni 1.00
+Ks 0.50 0.50 0.50
+Ns 0.06
+newmtl initialShadingGroup
+illum 4
+Kd 0.50 0.50 0.50
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl lambert2SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd ballena1.jpg
+Ni 1.00
+newmtl lambert3SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd frontend-large.jpg
+Ni 1.00
+newmtl lambert5SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd images.jpg
+Ni 1.00
+newmtl lambert6SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd istockphoto-1153255219-612x612.jpg
+Ni 1.00
