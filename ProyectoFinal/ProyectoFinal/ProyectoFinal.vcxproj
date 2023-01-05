@@ -22,15 +22,15 @@
     <ClInclude Include="Model.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="416041343_PROYECTOFINAL2023-1_GPO07.cpp" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Shaders\anim.frag" />
     <None Include="Shaders\anim.vs" />
     <None Include="Shaders\lamp.frag" />
     <None Include="Shaders\lamp.vs" />
     <None Include="Shaders\lighting.frag" />
     <None Include="Shaders\lighting.vs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="PROYECTOFINAL2023-1.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
